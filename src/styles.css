@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+.fs-54{
+    font-size: 54pt;
+}
+
+.fs-18{
+    font-size: 18pt;
+}
+
+.bgColor{
+    background-color: #FCFDFF;
+}
+
+.fontQuick{
+    font-family: 'Quicksand';
+}
+
+.minHeigth{
+    min-height: 50vh;
+
+}

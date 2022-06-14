@@ -1,0 +1,21 @@
+.fs-54{
+    font-size: 54pt;
+}
+
+.fs-18{
+    font-size: 18pt;
+}
+
+.noWrap{
+    white-space: nowrap;
+}
+
+.maxWidth-50{
+    max-width: 50vw;
+}
+
+.imgBgI{
+    margin: 0;
+   width: 100vw;
+   height: 80vh;
+}
