@@ -77,6 +77,11 @@ export class InicioComponent implements OnInit {
   }
 
   publicar(){
+
+    if(this.postagem.foto==''){
+      this.postagem.foto = "https://imgur.com/NbIsnxC.png"
+    }
+    
     this.postagem.tema=this.tema
     this.usuario.id = this.idUsuario
 
@@ -109,5 +114,13 @@ export class InicioComponent implements OnInit {
         this.listaTemas=resp
       } )
     }
+  }
+  
+  administrador () {
+    let ok: boolean = false;
+    if (environment.tipo == 'adm') {
+      ok = true
+    }
+    return ok
   }
 }

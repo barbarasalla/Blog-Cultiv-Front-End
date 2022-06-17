@@ -24,16 +24,20 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   entrar(userLogin: UserLogin): Observable<UserLogin>{
-    return this.http.post<UserLogin>('https://blogpessoal-bsm001.herokuapp.com/usuarios/logar', userLogin)
+    return this.http.post<UserLogin>('https://cultiv-blog.herokuapp.com/usuarios/logar', userLogin)
   }
 
 
   cadastrar(user: User): Observable<User>{
-    return this.http.post<User>('https://blogpessoal-bsm001.herokuapp.com/usuarios/cadastrar', user)
+    return this.http.post<User>('https://cultiv-blog.herokuapp.com/usuarios/cadastrar', user)
+  }
+
+  atualizar(user: User): Observable<User>{
+    return this.http.put<User>('https://cultiv-blog.herokuapp.com/usuarios/atualizar', user, this.token)
   }
 
   getByIdUser(id: number): Observable<User>{
-    return this.http.get<User>(`https://blogpessoal-bsm001.herokuapp.com/usuarios/${id}`, this.token)
+    return this.http.get<User>(`https://cultiv-blog.herokuapp.com/usuarios/${id}`, this.token)
   }
 
   logado(){

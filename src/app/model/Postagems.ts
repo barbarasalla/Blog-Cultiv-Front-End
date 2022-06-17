@@ -11,6 +11,8 @@ export class Postagem{
         
         public data: Date;
 
+        public foto: string;
+
         public usuario: User;
 
         public tema: Tema;       
