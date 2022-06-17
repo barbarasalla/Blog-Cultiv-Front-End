@@ -18,7 +18,10 @@ export class PerfilComponent implements OnInit {
   usuario: User = new User()
   listaPostagens: Postagem[]
 
-  idUsuario: 0;
+  idUsuario: 0
+
+  key= 'data'
+  reverse = true
 
   constructor(
     private router: Router,
@@ -45,7 +48,6 @@ export class PerfilComponent implements OnInit {
   findByIdUsuario(){
     this.authService.getByIdUser(this.idUsuario).subscribe((resp: User)=>{
       this.usuario = resp
-      console.log(this.idUsuario)
     })
   }
 
@@ -53,6 +55,14 @@ export class PerfilComponent implements OnInit {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
       this.listaPostagens=resp
     })
+  }
+
+  verificaoaUsuario(){
+    let ok: boolean = false;
+    if (environment.id == this.idUsuario){
+      ok = true
+    }
+    return ok
   }
 
 }

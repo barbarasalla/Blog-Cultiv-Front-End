@@ -1,3 +1,11 @@
 .fs-16{
     font-size: 16pt;
 }
+
+.link {
+    color: rgb(168, 58, 58);
+}
+
+a:hover{
+    color: black
+}

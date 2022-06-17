@@ -10,10 +10,10 @@
          <img src={{foto}} alt="icone de perfil do user" width="40px" height="40px" class="img-fuid rounded-circle">
         </li>
         <li class="nav-item pl-3">
-          <p class="m-0 font-weight-bold text-black">Olá, <a [routerLink]="['/perfil', id]">{{nome}}</a></p>
+          <p class="m-0 font-weight-bold text-black">Olá, <a class="link" [routerLink]="['/perfil', id]">{{nome}}</a></p>
         </li>
         <li class="nav-item pl-3">
-            <a [routerLink]="['/user-edit', id]"><p class="m-0"><i class="fa fa-pencil-square-o text-black" aria-hidden="true"></i></p></a>            
+            <a [routerLink]="['/user-edit', id]"><p class="m-0"><i class="fa fa-pencil-square-o link text-black" aria-hidden="true"></i></p></a>            
         </li>
       </ul>
 
