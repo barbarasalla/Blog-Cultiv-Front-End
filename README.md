@@ -15,4 +15,4 @@ BACK-END:
 - MySQL
 - Teste pelo Postman
 
-Acesse aqui o MVP do projeto: https://cultiv-blog.netlify.app/
+Acesse aqui a aplicação: https://cultiv-blog.netlify.app/
