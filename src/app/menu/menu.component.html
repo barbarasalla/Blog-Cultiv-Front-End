@@ -1,27 +1,44 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bgColor">
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
+
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto d-flex align-items-center fs-16">
-        <li class="nav-item active">
-         <img src={{foto}} alt="icone de perfil do user" width="40px" height="40px" class="img-fuid rounded-circle">
-        </li>
-        <li class="nav-item pl-3">
-          <p class="m-0 font-weight-bold text-black">Olá, <a class="link" [routerLink]="['/perfil', id]">{{nome}}</a></p>
-        </li>
-        <li class="nav-item pl-3">
-            <a [routerLink]="['/user-edit', id]"><p class="m-0"><i class="fa fa-pencil-square-o link text-black" aria-hidden="true"></i></p></a>            
-        </li>
+      <ul class="navbar-nav mr-auto d-flex justify-content-center align-items-center">
+
+      <li class="ml-5">
+        <a routerLink="/inicio"> <img src="https://imgur.com/dmUmteL.png" alt="Logo Cultiv"></a>            
+      </li>
+
+      <div class="row margin-menu text-center align-items-center">
+        <!-- <li class="nav-item active">
+          <a routerLink="/inicio">Inicio</a>
+        </li> -->
+        <!-- <li class="nav-item pl-5">
+          <a routerLink="/inicio">Sobre Nós</a>
+        </li> -->
+      </div>
+    
       </ul>
 
-      <ul class="mr-auto d-flex justify-content-center list-unstyled">
-        <li><img src="https://imgur.com/9yAsf99.png" alt=""></li>
-
-      </ul>
-
-      <button class="btn btn-outline-dark btn-sm" type="button" (click)="sair()">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></button>      
+      <li class="nav-item pr-1">
+        <p class="m-0 text-black">Olá, <b class="font-weight-bold"> {{nome}}</b></p>
+      </li>
+      <li class="nav-item dropdown mr-5">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          <img src={{foto}} alt="icone de perfil do user" width="40px" height="40px" class="img-fuid rounded-circle">
+        </a>
+        <div class="dropdown-menu dropdown-custom" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item dropdown-item-custom" [routerLink]="['/perfil', id]">Meu Perfil</a> 
+          <a class="dropdown-item dropdown-item-custom" [routerLink]="['/user-edit', id]">Editar Perfil</a>                            
+          <a class="dropdown-item dropdown-item-custom" (click)="sair()">Sair</a>
+        </div>
+      </li>
+      
+        
     </div>
   </nav>

@@ -13,6 +13,10 @@ html{
     font-size: 18pt;
 }
 
+.fs-16{
+    font-size: 16pt;
+}
+
 .bgColor{
     background-color: #FCFDFF;
 }

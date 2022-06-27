@@ -9,3 +9,24 @@
 a:hover{
     color: black
 }
+
+li{
+
+    list-style: none;
+    font-size: 26px;
+    text-align: center;
+}
+
+li a{
+    text-decoration: none;
+    color: gray;
+}
+
+li a:hover{
+    color: black;
+}
+
+.margin-menu{
+    margin-left: 100px;
+    margin-right: 100px;
+}

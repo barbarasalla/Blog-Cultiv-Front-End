@@ -3,7 +3,7 @@
 
 <div class="container-fluid bgColor">
   
-    <div class="row bgColor d-flex align-items-center">
+    <div class="row bgColorGreen d-flex align-items-center">
         <div class="col-md-6">
 
             <div class="row d-flex justify-content-center">
@@ -40,7 +40,7 @@
         </nav>
   
         <div class="tab-content mt-5" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">    
+          <div class="tab-pane fade show active bg-post" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">    
 
             <div class="row justify-content-center mt-5 mb-5">
               <div class="col-md-4">
@@ -50,8 +50,36 @@
               </div>
             </div>
 
+            <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-md-10">
 
-            <div class="card mb-3 m-5 p-4" *ngFor="let postagem of listaPostagens | orderBy : key : reverse">
+            <div class="post" *ngFor="let postagem of listaPostagens | orderBy : key : reverse">
+
+              <div class="square">
+                <img src={{postagem.foto}} onerror="this.src = 'https://imgur.com/JYIYdmj.png'" alt="..." width="100%" height="400px">
+              <div class="corpo-postagem">
+                <div class="h1">{{postagem.titulo}}</div>
+                <p>{{postagem.texto}}</p> 
+                <small class="fs-16">Tema: {{postagem.tema.descricao}}</small>  
+                <div class="row justify-content-between ml-1 mr-1 mt-1">
+                  <p class="card-text fs-18 link-post"><small>by: <a [routerLink]="['/perfil', postagem.usuario.id]">{{postagem.usuario.nome}}</a></small></p> 
+                  <p class="card-text fs-18"><small>Publicado em: {{postagem.data | date: 'dd/MM/yyyy'}}</small></p> 
+                </div>
+              
+                <div class="mt-4 mb-4">
+
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          </div>
+        </div>
+
+            <!-- <div class="card mb-3 m-5 p-4" *ngFor="let postagem of listaPostagens | orderBy : key : reverse">
               <div class="row no-gutters" >
                 <div class="col-md-4">
                   <img src="{{postagem.foto}}" onerror="this.src = 'https://imgur.com/NbIsnxC.png'" alt="..."  width="300px" height="300px">
@@ -66,8 +94,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div> 
+            </div> -->
+          <!-- </div>  -->
   
   
           <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">           
@@ -76,7 +104,7 @@
             <div class="card mb-3 m-5 p-4" *ngFor="let postagem of usuario.postagem | orderBy : key : reverse">
               <div class="row no-gutters" >
                 <div class="col-md-4">
-                  <img src="{{postagem.foto}}" onerror="this.src = 'https://imgur.com/NbIsnxC.png'" alt="..."  width="300px" height="300px">
+                  <img src="{{postagem.foto}}" onerror="this.src = 'https://imgur.com/JYIYdmj.png'" alt="..."  width="300px" height="300px">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -105,15 +133,25 @@
               </div>
             </div>
   
-            <div class="card-columns" *ngFor="let tema of listaTemas">
-              <div class="card text-center" *ngFor="let postagem of tema.postagem | orderBy : key : reverse">
-                <div class="card-body">
-                  <h5 class="card-title m-0">{{postagem.titulo}}</h5>
-                  <p class="card-text mb-3">{{postagem.texto}}</p>                    
-                  <p class="card-text"><small class="text-muted">{{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}</small></p>
-                  <p class="card-text"><small class="text-muted">by: {{postagem.usuario.nome}}</small></p>
-                </div>
+            <div class="row justify-content-center">
+              <div class="col-md-10">
+                <div *ngFor="let tema of listaTemas">
+                  <div class="post" *ngFor="let postagem of tema.postagem | orderBy : key : reverse">
+                    <div class="square">
+                      <img src={{postagem.foto}} onerror="this.src = 'https://imgur.com/JYIYdmj.png'" alt="..." width="100%" height="400px">
+                    <div class="corpo-postagem">
+                      <div class="h1">{{postagem.titulo}}</div>
+                      <p>{{postagem.texto}}</p>           
+                      <div class="row justify-content-between mr-1 ml-1">
+                        <p class="card-text fs-18 link-post"><small>by: <a [routerLink]="['/perfil', postagem.usuario.id]">{{postagem.usuario.nome}}</a></small></p> 
+                        <p class="card-text fs-18"><small>Publicado em: {{postagem.data | date: 'dd/MM/yyyy'}}</small></p>
+                      </div>         
+                       
+                    </div>
+                    </div>
+                  </div>
               </div>
+            </div>            
             </div>
   
           </div>
@@ -121,7 +159,7 @@
   </div>
   
   
-  <div class="container bgColor border-top p-5">
+  <div class="container bgColor border-top p-3">
     <h5 class="mb-5 mt-5">Alguns beneficíos de cultivar plantas e vegetais em casa:</h5>
     <ul class="list-unstyled">
       <li class="media">
@@ -151,17 +189,17 @@
 
 </div>
 
-<div class="container-fluid bgColor mt-5">
-  <div class="row">
+<div class="container bgColor pt-5 pb-5 border-top">
+  <div class="row justify-content-center">
 
-    <div class="col-md-6 text-center p-5">
+    <div class="col-md-6 text-center p-5" id="sobrenos">
       <h1>Sobre nós</h1>
       <p class="text-justify">Surgimos em 2022, com o objetivo de reunir e compartilhar informações e dicas para realizar o cultivo e manutenção de plantas em casas e apartamentos.</p>
       <p> </p>
     </div>
 
     <div class="col-md-6">
-      <img src="https://imgur.com/avlGK8w.png" alt="" width="800" height="500">
+      <img src="https://imgur.com/avlGK8w.png" alt="" width="100%" height="100%">
     </div>
   </div>
 </div>
